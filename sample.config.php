@@ -15,6 +15,7 @@ $config['site_url'] = '/';
 $config['debug_mode'] = TRUE;
 $config['theme'] = 'default';
 $config['cookie_salt'] = 'something-really-really-complex-and-long';
+$config['init'] = FALSE;
 
 /**
  * Database
