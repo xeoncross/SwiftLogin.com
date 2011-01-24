@@ -5,6 +5,7 @@ class Controller_Welcome extends Controller
 	
 	public function index()
 	{
+		die('SwiftLogin');
 		Session::start(config('session'));
 		
 		$this->sidebar = new View('sidebar', FALSE);
