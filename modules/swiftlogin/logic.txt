@@ -1,0 +1,149 @@
+// Capacity on 512mB server
+
+400mb free ram / .7mb per script = 500 requests
+1sec / .14sec = 7 times
+
+500mb full ram * 7 times a second = 3,500 rps
+
+or..
+210,000 rpm
+12,600,000 rph
+302,400,000 rpd (~3TB of bandwidth)
+
+
+attempt_login
+	ip
+	email
+	domain_id
+	created
+
+user
+	email
+	domain_id
+	password
+	user_salt
+	activation_key
+	new_password_key
+	new_password_time
+	created
+
+domain
+	domain
+	banned
+	created
+
+linked
+	user_id
+	key_id
+	domain_id
+	created
+
+key
+	user_id
+	domain_id
+	callback_url
+	key
+	created
+
+Thoughts:
+
+take more than 5 seconds to register
+
+confirm before they are linked to another site (share email with them)
+
+Track people who register - but never activate their account
+
+Instantly link a person when they have no linked accounts (99% chance they came for the perpose of registering for that site so don't bother asking them.)
+
+
+
+user sent to swiftlogin with callback
+	callback is valid domain
+	callback stored in session
+
+user logins in (or registers)
+	user row updated with random access token
+
+user sent back to site with random access token
+
+site pings us over SSL with random access token
+we reply with user email and account data
+
+
+
+Allow
+	if new site
+		link user to (get domain_id)
+	build return url
+
+Confirm
+	link user to (get domain_id)
+	build return url
+	
+
+SELECT * FROM "domain" WHERE "domain" = ?
+	? INSERT INTO DOMAIN
+SELECT COUNT(*) FROM "linked" WHERE "user_id" = ? AND "domain_id" = ?
+	? INSERT INTO LINKED
+$token = token();
+UPATE USER token = $token
+redirect(url + $token)
+
+
+//////////////////////
+Verify someone owns a domain and can make reputation requests
+//////
+
+Load page (create secret, save to session) show page telling user to create HTML page
+	User does then clicks "Verify"
+
+Try to find page 
+	no - fail message
+
+If the page is found then we create a new api key for that domain and redirect them back to the API listing page.
+
+
+///////////////// Register Recaptcha
+After a new account is created
+	load the captcha form (which posts to verify/recaptcha)
+	then send the email (instead of straight from login)
+
+
+
+////////////////// Verify page names?
+verify/email key
+verify/recaptcha (register)
+verify/user (api callback)
+verify/api (verify domain for api)
+
+
+confirm (confirm email)
+verify (api callback for login)
+api/create (verify domain for api)
+
+
+
+[[[[ login ]]]]
+enter new user or register_email set (submitting recaptcha)
+	show recaptcha
+		solve - /allow
+		
+enter current user
+	valid userpass - /allow
+
+
+if(registration_email)
+	check for valid captcha
+		no - show form
+		yes - create user = /allow
+
+if(post)
+	check for valid user
+		yes - login correct = /allow
+		no - show form
+	invalid user
+		show recaptcha form
+
+
+
+

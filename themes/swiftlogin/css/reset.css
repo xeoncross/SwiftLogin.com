@@ -1,0 +1,23 @@
+*{
+vertical-align:baseline;
+font-family:inherit;
+font-size:100%;
+outline:0;
+padding:0;
+margin:0;
+}
+
+article,aside,audio,figure,figcaption,hgroup,footer,header,nav,section,video,object{display:block; }
+table{border-collapse:collapse;border-spacing:0;width:100%; }
+th,td{text-align:left;vertical-align:top;padding:.5em;border:1px solid #ddd; }
+a img,img{border:0; }
+a,ins{text-decoration:none; }
+p, pre, blockquote { margin: 0 0 1em 0; line-height: 1.4em; }
+ul, ol { margin: 1em 0 2em 0; }
+
+/* Fix the small-ish headers */
+h1 { font-size:2.8em; }
+h2 { font-size:2.2em; }
+h3 { font-size:1.6em; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; line-height: 100%; margin: 0 0 1em 0; }
+

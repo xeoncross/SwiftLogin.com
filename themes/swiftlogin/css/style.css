@@ -1,0 +1,129 @@
+body {
+font: 13px/1.4em verdana;
+background: #fff;
+}
+
+.dp50 {width:50%; float:left; display: inline; *margin-right:-1px; }
+.padding_left { padding: 0 0 0 30px; }
+.padding_right { padding: 0 30px 0 0; border-right: 2px solid #cddaf1;}
+
+#top {height: 90px; display: none;}
+
+#top h1 {
+float: left;
+margin: 0;
+padding: 0;
+font-size: 3em;
+line-height: 60px;
+}
+
+#top h2 {
+float: right;
+margin: 0;
+padding: 0;
+line-height: 60px;
+}
+
+#container {
+max-width: 400px;
+margin: 0 auto;
+padding: 1em;
+background: #fff;
+}
+
+* html #container {width:640px;}
+
+#main { min-height: 300px; }
+
+.login_help
+{
+padding: 10px;
+margin: 2em 0;
+background: #ecf3ff;
+background: #effed9;
+-moz-border-radius: 4px;
+}
+
+
+#footer {
+margin-top: 10em;
+margin-bottom: 20em;
+}
+
+
+.clear { clear: both; display: block; height: 1px; }
+
+label span { float: right; font-size: 12px;}
+
+h1 a, h2 a {
+color:#506283;
+text-decoration: none;
+}
+
+
+h1, h2, h3, h4 {
+font-weight: normal;
+color:#506283;
+display:block;
+font-family:Arial,Helvetica,Verdana,sans-serif;
+line-height: 1.6em;
+margin: 0;
+padding: 0;
+}
+
+.info, .info a {}
+
+
+/* Messages Boxes */
+.message_box {
+    background: #F8FAFC url(../images/information.png) 20px center no-repeat;
+    border-top: 2px solid #B5D4FE;
+    border-bottom: 2px solid #B5D4FE;
+}
+
+.warning_box {
+    background: #fff6bf url(../images/error.png) 20px center no-repeat;
+    border-top: 2px solid #ffd324;
+    border-bottom: 2px solid #ffd324;
+}
+
+.error_box {
+    background: #fde6e9 url(../images/delete.png) 20px center no-repeat;
+    border-top: 2px solid #fb939f;
+    border-bottom: 2px solid #fb939f;
+}
+
+.success_box {
+    background: #EBFCE1 url(../images/accept.png) 20px center no-repeat;
+    border-top: 2px solid #B9DAA6;
+    border-bottom: 2px solid #B9DAA6;
+}
+
+.message_box, .warning_box, .error_box, .success_box {
+    /* These classes use the great Silk icons from http://famfamfam.com/ */
+    margin: 10px auto;
+    display: block;
+    clear: both;
+    padding: 4px 50px;
+}
+
+
+table {
+/*border-collapse: collapse; */
+margin: 2em 0;
+width: 100%;
+border: 1px solid #B3D4E9;
+}
+
+table th, table td { text-align: center; padding: 1em .5em;}
+table th { background: #ecf3ff;}
+table td {border-bottom: 1px solid #ecf3ff;}
+
+.confirm { clear: both; padding: 2em 0;}
+.confirm a {font-size: 2em; padding: 1em 1.5em; color: #fff;
+-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;}
+a.allow {background: #3AC719; float: left; border: 4px solid #AFFDB4;}
+a.deny {background: #C70B0B; float: right; border: 4px solid #F89595;}
+
+
+p.meta { color: #777; }
