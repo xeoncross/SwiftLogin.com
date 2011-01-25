@@ -112,6 +112,7 @@ class SwiftLogin_Controller extends Controller
 	}
 	
 
+	/*
 	protected function email($email, $subject, $message)
 	{
 		//file_put_contents('emails/email_'.md5($email). '.txt', $subject."\n".$message);
@@ -123,6 +124,36 @@ class SwiftLogin_Controller extends Controller
 		mail($email, $subject, $message, $headers);
 
 	}
+	*/
+	
+	// Sends an HTML formatted email
+    function mail($to, $subject, $msg, $from = 'SwiftLogin Activation <donotreply@swiftlogin.com>', $plaintext = '')
+    {
+        if(!is_array($to)) $to = array($to);
+        if(!$plaintext) $plaintext = strip_tags($msg);
+
+        foreach($to as $address)
+        {
+            $boundary = uniqid(rand(), true);
+
+            $headers  = "From: $from\n";
+            $headers .= "MIME-Version: 1.0\n";
+            $headers .= "Content-Type: multipart/alternative; boundary = $boundary\n";
+            $headers .= "This is a MIME encoded message.\n\n";
+            $headers .= "--$boundary\n" .
+                        "Content-Type: text/plain; charset=ISO-8859-1\n" .
+                        "Content-Transfer-Encoding: base64\n\n";
+            $headers .= chunk_split(base64_encode($plaintext));
+            $headers .= "--$boundary\n" .
+                        "Content-Type: text/html; charset=ISO-8859-1\n" .
+                        "Content-Transfer-Encoding: base64\n\n";
+            $headers .= chunk_split(base64_encode($msg));
+            $headers .= "--$boundary--\n" .
+
+            mail($address, $subject, '', $headers);
+        }
+    }
+    
 	
 	
 	/**
