@@ -54,7 +54,8 @@ This process works by sharing your email with each site you login to so you don'
 
 After login, you will be redirected back to <b><?php print session('callback_domain'); ?></b>
 </p>
-<script>
+
+<script type="text/javascript">
 document.getElementById('meta').style.display = 'none';
 document.getElementById('what_is_this').onclick=function(){document.getElementById('meta').style.display='';return false}
 </script>
