@@ -114,7 +114,14 @@ class SwiftLogin_Controller extends Controller
 
 	protected function email($email, $subject, $message)
 	{
-		file_put_contents('emails/email_'.md5($email). '.txt', $subject."\n".$message);
+		//file_put_contents('emails/email_'.md5($email). '.txt', $subject."\n".$message);
+		
+		$headers = 'From: donotreply@swiftlogin.com' . "\r\n" .
+		    //'Reply-To: webmaster@swiftlogin.com' . "\r\n" .
+		    'X-Mailer: Swiftlogin-Verify 1.0';
+		
+		mail($email, $subject, $message, $headers);
+
 	}
 	
 	
