@@ -1,0 +1,208 @@
+/*
+A CSS framework by David Pennington
+Copyright 2011, MIT License
+http://xeoncross.com
+*/
+
+/* Master Reset */
+*{vertical-align:baseline}
+html,body,div,form,fieldset,input,textarea,th,td,h1,h2,h3,h4,h5,h6{margin:0;padding:0}
+article,aside,figure,figcaption,hgroup,footer,header,nav,section,video,object{display:block}
+th,td{text-align:left;vertical-align:top;padding:.5em;border:1px solid}
+table{border-collapse:collapse;border-spacing:0;width:100%}
+abbr,acronym{cursor:help;border-bottom:1px dotted}
+fieldset,img{border:0}
+pre{width:100%;white-space:pre;overflow:auto}
+.reset,.reset *{font-weight:inherit;font-family:inherit;font-style:inherit;font-size:1em;border:0;outline:0;padding:0;margin:0}
+
+/* Form Reset (IE7+) */
+input[type=text],input[type=email],input[type=password],input[type=url],input[type=tel],html>body textarea 
+{
+	width:100%;
+	padding:.5em;
+	-webkit-box-sizing:border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing:border-box;    /* Firefox, other Gecko */
+	box-sizing:border-box;         /* Opera/IE 8+ */
+}
+
+
+/* Vertical Rhythm - Auto-ajusting Font/Line-Height Ratio */
+body{font-size:80%;line-height:1.5em;font-family:Helvetica, Arial, sans-serif;color:#333;}/*IE*/
+html>body{font-size:12px;}
+p{margin:0 0 1.5em 0;padding:0}
+h1,h2,h3,h4{line-height:1.5em}
+h1{font-size:3em}
+h2{font-size:2em}
+h3{font-size:1.5em;line-height:2em}
+h4{font-size:1em;font-weight:bold}
+table{margin:1em 0}
+th,td{border:1px solid;padding:.5em}
+blockquote{margin:1.5em;font-style:italic}
+ul,ol,dl{margin:1.5em;padding:0}
+ul ul,ol ol{margin:0 2em}
+pre{margin:1.5em 0;line-height:1.5em}
+input,select{margin:0 0 1.5em 0;font-family:inherit;font-size:1em;/*line-height:1.5em;height:1.5em;*/}
+textarea{margin:0 0 1.5em 0;min-height:9em;font-family:inherit;font-size:1em;}
+
+a {color: #186B82; text-decoration: none; }
+/*a:visited { color: #451570; }*/
+a:hover {color: #186B82; text-decoration: underline;}
+
+.clear { clear: both; display: block; height: 1px; }
+label span { float: right; font-size: 12px;}
+h1 a, h2 a { /*color:#284B6D;*/ text-decoration: none; }
+
+h1, h1 a, h2, h2 a, h3, h3 a, h4 {
+	color:#284B6D;
+	font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+	font-weight: normal;
+}
+
+h2 { border-bottom: 1px solid #ddd;margin-bottom: .5em; }
+
+.info, .info a {}
+
+td, th { border-color: #aaa; }
+table th {background: #eee;}
+
+
+code, pre{
+	background:#fafdff;
+	border:1px solid #b6d8ee;
+	display:block;
+	font-family:"DejaVu Sans Mono","Bitstream Vera Sans Mono",Monaco,"Courier New",monospace;
+	margin:1.5em 0;
+	overflow:auto;
+	padding:.5em 1em;
+	white-space:pre;
+}
+
+
+/* Layout */
+
+#container { margin: 1em; }
+
+#footer { line-height: 40px; }
+
+.login_help
+{
+padding: 10px;
+margin: 2em 0;
+background: #effed9;
+border: 1px solid #ccc;
+border: 1px solid #B9DAA6;
+background: #fff;
+-moz-border-radius: 4px;
+color: #295902;
+}
+
+.confirm { clear: both; padding: 2em 0;}
+.confirm a {font-size: 2em; padding: 1em 1.5em; color: #fff;
+-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;}
+a.allow {background: #3AC719; float: left; border: 4px solid #AFFDB4;}
+a.deny {background: #C70B0B; float: right; border: 4px solid #F89595;}
+
+
+p.meta { }
+
+
+#main img.profile
+{
+-moz-box-shadow: 0px 1px 2px #444;
+-webkit-box-shadow: 0px 1px 2px #444;
+box-shadow: 0px 1px 2px #444;
+padding: 2px;
+}
+
+.profile_box { line-height: 2.1em; margin: 2em 0; }
+
+#debug { display: none; }
+
+#what_is_this {
+float: right;
+line-height: 50px;
+cursor: pointer;
+}
+
+
+/* Sidebar */
+h1#logo a { }
+h1#logo span {
+display: block;
+clear: both;
+font-size:13px;
+font-family: Arial;
+line-height: 1em;
+color: #ccc;
+font-weight: normal;
+margin: -.6em 0 2em 0em;
+}
+
+
+#sidebar ul { margin: 0; }
+#sidebar ul li { display: inline; }
+#sidebar ul li a { line-height: 2em; display: block; }
+#sidebar ul li a:hover { background: #f8f8f8; }
+#sidebar ul li a.active,#sidebar ul li a.active:hover {
+	font-weight: bold; font-size: 13px; color: #000;
+}
+
+
+#sidebar p { margin: 0 0 2em 0; }
+
+
+/* #sidebar .gravatar { float: left; } */
+
+em {color: #000; background: #f5f5f5; font-style: normal; padding: 2px;}
+
+
+/* Messages Boxes use the great Silk icons from http://famfamfam.com/ */
+.message, .warning, .error, .success
+{
+    margin: 1em auto;
+    display: block;
+    padding: .8em 50px;
+	border: 1px solid #fff;
+}
+.message
+{
+    background: #F8FAFC url(../images/message.png) 20px center no-repeat;
+    border-color: #B5D4FE;
+}
+.warning
+{
+    background: #fff6bf url(../images/warning.png) 20px center no-repeat;
+    border-color: #ffd324;
+}
+.error
+{
+    background: #fde6e9 url(../images/error.png) 20px center no-repeat;
+    border-color: #fb939f;
+}
+.success
+{
+    background: #EBFCE1 url(../images/success.png) 20px center no-repeat;
+    border-color: #B9DAA6;
+}
+
+
+/* Non-Mobile Devices Get the full layout */
+@media only screen and (min-width:800px)
+{
+	#container { margin: 30px auto; width: 900px; }
+	#sidebar { text-align: right; float: left; width: 200px; }
+	#content { margin: 0 0 0 240px; }
+	#main, #footer { width: 500px; margin: 0 auto; }
+	#main {
+		margin: 30px auto 10px auto;
+		border: 5px solid #f8f8f8;
+		padding: 20px 30px;
+		-webkit-box-shadow: 0 1px 4px #aaa;
+		-moz-box-shadow: 0 2px 5px #aaa;
+		box-shadow: 0 1px 4px #aaa;
+		-webkit-border-radius: 12px;
+		-moz-border-radius: 12px;
+		border-radius: 12px;
+	}
+	#sidebar ul { margin: 4em 0; text-align: right; }
+}

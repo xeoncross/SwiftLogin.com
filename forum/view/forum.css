@@ -1,0 +1,30 @@
+
+.forum table td.meta{ color: #888; text-align: center; }
+
+.forum table th.meta{ text-align: center; }
+
+
+.forum_meta {
+margin: 0 0 1em 0;
+border: 1px solid #ddd;
+-moz-border-radius: 4px;
+padding: 1em;
+}
+
+.forum_meta .right {
+float: right;
+margin-top: -1.2em;
+}
+
+
+#thread .meta {
+border-bottom: 0px solid #ddd;
+background: #f8f8f8;
+padding: .5em;
+color: #777;
+}
+
+.topic, .reply { margin: 0 0 3em 0; }
+
+
+.action_links { float: right; }
