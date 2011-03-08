@@ -39,7 +39,7 @@ public static function get($k,$c=NULL)
 		print '<pre>';
 		var_dump($data);
 		print '</pre>';
-		//print dump($data);
+		print dump($_SESSION);
 		die();
 		return is_scalar($v[1])?$v[1]:(array)$v[1];
 	}

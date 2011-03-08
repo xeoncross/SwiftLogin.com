@@ -202,7 +202,8 @@ class Login_Controller_Index extends SwiftLogin_Controller
 		$email_input = $inputs[array_rand($inputs)];
 		$_SESSION['email_input'] = $email_input;
 		*/
-		$_SESSION['token'] = token();
+		//$_SESSION['token'] = token();
+		Session::token();
 		
 		$this->content = new View('form', 'login');
 		//$this->content->inputs = $inputs;
