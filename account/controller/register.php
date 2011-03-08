@@ -33,7 +33,7 @@ class Account_Controller_Register extends SwiftLogin_Controller
 		// How did they get here then?
 		if( ! session('registration_email') OR ! session('registration_password'))
 		{
-			redirect('/login?url=https://swiftlogin.com');
+			redirect('login?url=https://swiftlogin.com');
 			exit();
 		}
 		
