@@ -45,6 +45,11 @@ function highlight($string)
 <?php print dump($_SESSION); ?>
 <?php } ?>
 
+<?php if(!empty($_POST)) { ?>
+<b>$_POST Data</b>
+<?php print dump($_POST); ?>
+<?php } ?>
+
 <?php $included_files = get_included_files(); ?>
 <b><?php print count($included_files); ?> PHP Files Included:</b>
 <pre>
