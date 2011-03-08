@@ -50,6 +50,11 @@ function highlight($string)
 <?php print dump($_POST); ?>
 <?php } ?>
 
+<?php if(!empty($_COOKIE)) { ?>
+<b>$_COOKIE Data</b>
+<?php print dump($_COOKIE); ?>
+<?php } ?>
+
 <?php $included_files = get_included_files(); ?>
 <b><?php print count($included_files); ?> PHP Files Included:</b>
 <pre>
