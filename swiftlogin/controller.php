@@ -138,8 +138,11 @@ class SwiftLogin_Controller extends Controller
 
 		foreach($to as $address)
 		{
-			file_put_contents(SP. 'emails/email_'.preg_replace('/\W/','',$address). '.txt', $subject."\n".$msg);
-			continue;
+			if(DOMAIN == 'http://swiftlogin.loc')
+			{
+				file_put_contents(SP. 'emails/email_'.preg_replace('/\W/','',$address). '.txt', $subject."\n".$msg);
+				continue;
+			}
 			
 			$boundary = uniqid(rand(), true);
 
