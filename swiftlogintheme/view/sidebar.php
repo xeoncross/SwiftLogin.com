@@ -39,6 +39,16 @@ Hey There!
 	<img src="http://www.gravatar.com/avatar/<?php print md5(session('email')); ?>?s=40" alt="Change Gravatar" />
 </a>
 </p>
+
+<?php if(Swiftlogin_User::is_role('admin')) { ?>
+<ul>
+	<li>Admin Area</li>
+	<li><a href="/topic/admin">Topic</a></li>
+	<li><a href="/reply/admin">Reply</a></li>
+	<li><a href="/account/admin">User</a></li>
+</ul>
+<?php } ?>
+
 <?php } else { ?>
 
 <h3>About</h3>

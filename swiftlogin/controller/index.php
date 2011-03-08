@@ -1,7 +1,7 @@
 <?php
 class Swiftlogin_Controller_Index extends Controller
 {
-	public $template = 'thin_layout';
+	//public $template = 'thin_layout';
 	
 	public function action()
 	{

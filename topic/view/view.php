@@ -16,15 +16,15 @@
 			
 			<?php if($topic->user_id == session('user_id') OR Forum_User::$is_admin) { ?>
 				<div class="action_links">
-					<a href="<?php print site_url('topic/update/'. $topic->id); ?>">Edit</a>
+					<a href="<?php print site_url('topic/update/'. $topic->id); ?>">Edit</a> - 
+					<a class="delete" href="<?php print site_url('topic/delete/'. $topic->id. '/'. base64_url_encode(url())); ?>" onclick="return confirm('Are you sure?');">Delete</a>
 					<?php if(Forum_User::$is_admin) { ?>
-					- <a class="disable" href="<?php print site_url('topic/disable/'. $topic->id. '/'. base64_url_encode(url())); ?>">Disable</a>
 					<?php } ?>
 				</div>
 			<?php }?>
 			
 			<div>Posted by <a href="<?php print $topic->user->website(); ?>" target="_blank"><?php print $topic->user->username(); ?></a> 
-			on <span class="date"><?php print Time::show($topic->created); ?></span></div>
+			<span class="date"><?php print Time::show($topic->created); ?></span></div>
 		
 			<?php //print html::gravatar($topic->user->email, 40, $topic->user->username()); ?>
 			
@@ -84,7 +84,7 @@
 			<?php if($reply->user_id == session('user_id') OR Forum_User::$is_admin) { ?>
 				<div class="action_links">
 					<a href="<?php print site_url('reply/update/'. $reply->id); ?>">Edit</a> -
-					<a class="disable" href="<?php print site_url('reply/disable/'. $reply->id. '/'. base64_url_encode(url())); ?>">Disable</a>
+					<a class="delete" href="<?php print site_url('reply/delete/'. $reply->id. '/'. base64_url_encode(url())); ?>" onclick="return confirm('Are you sure?');">Delete</a>
 				</div>
 			<?php }?>
 			
@@ -119,7 +119,7 @@
 			*/ ?>
 		
 		<div>Posted by <a href="<?php print $reply->user->website(); ?>" target="_blank"><?php print $reply->user->username(); ?></a> 
-		on <span class="date"><?php print Time::show($reply->created); ?></span></div>
+		<span class="date"><?php print Time::show($reply->created); ?></span></div>
 		
 		</div>
 	</div>

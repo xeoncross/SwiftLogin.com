@@ -116,7 +116,7 @@ class Login_Controller_Index extends SwiftLogin_Controller
 				
 				// Try to find this user
 				//$user = Emaillogin_Model_User::getByEmail($email);
-				$user = $this->db->row('SELECT * FROM user WHERE email = ?', array($email));
+				$user = $this->db->row('SELECT * FROM "user" WHERE email = ?', array($email));
 		
 				// If no user was found, then ask them to solve a recaptcha
 				if( ! $user)
@@ -137,9 +137,14 @@ class Login_Controller_Index extends SwiftLogin_Controller
 					// They still need to activate their account!
 					if($user->activation_key)
 					{
-						$this->content = new View('email_already_sent', 'login');
+						$this->content = new View('register/email_already_sent', 'account');
 						$this->content->email = $email;
 						return;
+					}
+					// BANNED!!!????
+					elseif ($user->banned)
+					{
+						$error = 'Sorry, your account has been disabled because of suspicious activity.';
 					}
 					// Invalid password !?
 					elseif ($user->password !== $this->hash_password($user->user_salt. post('password')))

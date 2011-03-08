@@ -8,6 +8,10 @@ class Swiftlogin_Model_User extends ORM
 		'topic' => 'Forum_Model_Topic',
 		'replies' => 'Forum_Model_Reply'
 	);
+
+	public static $b = array(
+		'domain' => 'Swiftlogin_Model_Domain'
+	);
 	
 	public function username()
 	{

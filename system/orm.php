@@ -221,7 +221,7 @@ public static function objects($k=0,$c=0,$m=0,$w=0,$l=0,$o=0,$ord=array())
  */
 public static function select($f,$c,$m=0,$w=array(),$l=0,$o=0,$ord=array())
 {
-	$m=$m?:get_called_class();$ord=$ord+static::$o;if($f!='fetch'){$l=$o=0;$ord=array();}$v=DB::select(($c?$c:'COUNT(*)'),$m::$t,$w,$l,$o,$ord);return static::$db->$f($v[0],$v[1],($c=='*'?NULL:0));
+	$m=$m?:get_called_class();$ord=$ord+static::$o;if($f!='fetch'){$l=$o=0;$ord=array();}$v=static::$db->select(($c?$c:'COUNT(*)'),$m::$t,$w,$l,$o,$ord);return static::$db->$f($v[0],$v[1],($c=='*'?NULL:0));
 }
 
 

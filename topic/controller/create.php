@@ -64,7 +64,7 @@ class Topic_Controller_Create extends Forum_Controller
 		
 		// Create new forum topic
 		$topic->set(array(
-			'title' => h(post('title')),
+			'title' => h(strip_tags(post('title'))),
 			'text' => tuh::parse(post('text')),
 			'forum_id' => $forum->id,
 			'user_id' => Swiftlogin_User::id()
@@ -74,6 +74,7 @@ class Topic_Controller_Create extends Forum_Controller
 		
 		// Send them back to the topic
 		redirect('topic/view/'. $topic->id);
+		exit();
 		
 	}
 

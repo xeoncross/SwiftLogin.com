@@ -43,7 +43,7 @@ class Forum_Model_Reply extends ORM
 		return (bool) $this->where('"date" > ? AND "user_id" = ?')->count(array($date, $user_id));
 	}
 
-	/*
+	
 	// Set date
 	protected function insert(array $data = NULL)
 	{
@@ -57,5 +57,5 @@ class Forum_Model_Reply extends ORM
 		$data['modified'] = sql_date();
 		return parent::update($data);
 	}
-	*/
+
 }

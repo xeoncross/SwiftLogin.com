@@ -30,7 +30,7 @@ class Account_Controller_Confirm extends SwiftLogin_Controller
 		
 		$this->load_database();
 		
-		$user = $this->db->row('SELECT * FROM user WHERE activation_key = ?', array(get('key')));
+		$user = $this->db->row('SELECT * FROM "user" WHERE "activation_key" = ?', array(get('key')));
 		
 		// Invalid key?
 		if( ! $user)

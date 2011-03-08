@@ -92,7 +92,7 @@ class Swiftlogin_User {
 			//Must be an admin or high enough role
 			if ( ! self::is_role($role))
 			{
-				self::deny_access('deny');
+				self::deny_access('user/deny');
 			}
 		}
 	}
@@ -106,9 +106,9 @@ class Swiftlogin_User {
 	 * @param $return_to
 	 * @return void
 	 */
-	public static function deny_access($uri = 'deny', $return_to = NULL)
+	public static function deny_access($uri = 'user/deny', $return_to = NULL)
 	{
-		redirect('user/'. $uri. '/'. base64_url_encode($return_to));
+		redirect($uri. '/'. base64_url_encode($return_to));
 		exit();
 	}
 

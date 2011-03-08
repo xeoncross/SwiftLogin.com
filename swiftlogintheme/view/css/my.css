@@ -20,6 +20,7 @@ input[type=text],input[type=email],input[type=password],input[type=url],input[ty
 {
 	width:100%;
 	padding:.5em;
+	margin:0 0 1.5em 0;
 	-webkit-box-sizing:border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing:border-box;    /* Firefox, other Gecko */
 	box-sizing:border-box;         /* Opera/IE 8+ */
@@ -41,7 +42,7 @@ blockquote{margin:1.5em;font-style:italic}
 ul,ol,dl{margin:1.5em;padding:0}
 ul ul,ol ol{margin:0 2em}
 pre{margin:1.5em 0;line-height:1.5em}
-input,select{margin:0 0 1.5em 0;font-family:inherit;font-size:1em;/*line-height:1.5em;height:1.5em;*/}
+input,select{font-family:inherit;font-size:1em;/*line-height:1.5em;height:1.5em;*/}
 textarea{margin:0 0 1.5em 0;min-height:9em;font-family:inherit;font-size:1em;}
 
 a {color: #186B82; text-decoration: none; }
@@ -62,11 +63,12 @@ h2 { border-bottom: 1px solid #ddd;margin-bottom: .5em; }
 
 .info, .info a {}
 
+
 td, th { border-color: #aaa; }
 table th {background: #eee;}
 
 
-code, pre{
+pre, code {
 	background:#fafdff;
 	border:1px solid #b6d8ee;
 	display:block;
@@ -74,7 +76,6 @@ code, pre{
 	margin:1.5em 0;
 	overflow:auto;
 	padding:.5em 1em;
-	white-space:pre;
 }
 
 

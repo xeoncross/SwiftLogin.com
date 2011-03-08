@@ -27,7 +27,7 @@ class Forum_Controller extends Controller
 	//ID of current user if logged in
 	public $user_id = NULL;
 	
-	public $template = 'thin_layout';
+	//public $template = 'thin_layout';
 	
 	public function __construct()
 	{

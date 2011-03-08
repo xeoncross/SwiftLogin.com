@@ -33,7 +33,7 @@ class Account_Controller_Register extends SwiftLogin_Controller
 		// How did they get here then?
 		if( ! session('registration_email') OR ! session('registration_password'))
 		{
-			redirect('login');
+			redirect('/login?url=https://swiftlogin.com');
 			exit();
 		}
 		
@@ -91,10 +91,10 @@ class Account_Controller_Register extends SwiftLogin_Controller
 				$this->db->insert('user', $user);
 				
 				// Build the URL
-				$url = DOMAIN. '/confirm?key='. $activation_key;
+				$url = DOMAIN. '/account/confirm?key='. $activation_key;
 				
 				// Load the email message
-				$message = new View('login/email', 'account');
+				$message = new View('register/email', 'account');
 				$message->set(array('email' => $email, 'ip_address' => server('REMOTE_ADDR'), 'url' => $url));
 				
 				// Send them an email!
@@ -124,7 +124,7 @@ class Account_Controller_Register extends SwiftLogin_Controller
 		$_SESSION['token'] = token();
 		
 		$this->content = new View('register/form', 'account');
-		$this->content->recaptcha = new View('recaptcha', 'account');
+		$this->content->recaptcha = new View('recaptcha');
 		
 		Session::save();
 		

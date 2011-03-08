@@ -1,15 +1,13 @@
 <?php
 
-throw new Exception('Not used');
-
-class Emaillogin_Model_Domain extends Emaillogin_ORM
+class Swiftlogin_Model_Domain extends ORM
 {
 	public static $t = 'domain';
 	public static $f = 'domain_id';
 	public static $h = array(
-		'key' => 'Emaillogin_Model_Key',
-		'links' => 'Emaillogin_Model_Link',
-		'users' => 'Emaillogin_Model_User'
+		'key' => 'Swiftlogin_Model_Key',
+		'links' => 'Swiftlogin_Model_Link',
+		'users' => 'Swiftlogin_Model_User'
 	);
 	
 	
@@ -21,7 +19,7 @@ class Emaillogin_Model_Domain extends Emaillogin_ORM
 	public static function getByDomain($domain)
 	{
 		$id = self::$db->column('SELECT "id" FROM "domain" WHERE "domain" = ?', array($domain));
-		$object = new Emaillogin_Model_Domain($id);
+		$object = new Swiftlogin_Model_Domain($id);
 		
 		if( ! $object->load())
 		{

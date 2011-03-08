@@ -1,4 +1,4 @@
-<h1>EmailLogin</h1>
+<h1>SwiftLogin</h1>
 
 <div class="error">Login Error</div>
 

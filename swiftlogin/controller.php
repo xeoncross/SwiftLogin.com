@@ -4,7 +4,7 @@
 class SwiftLogin_Controller extends Controller
 {
 	
-	public $template = 'thin_layout';
+	//public $template = 'thin_layout';
 	
 	/*
 	public function __construct()
@@ -47,7 +47,8 @@ class SwiftLogin_Controller extends Controller
 	protected function ip_address()
 	{
 		//return $this->ip2int(ipaddress::get());
-		return $this->ip2int(server('REMOTE_ADDR'));
+		//return $this->ip2int(server('REMOTE_ADDR'));
+		return server('REMOTE_ADDR');
 	}
 	
 	// Convert IP4 to int
@@ -111,7 +112,7 @@ class SwiftLogin_Controller extends Controller
 		
 		//return Emaillogin_Model_Domain::count(array('domain' => end(explode('@', $email)), 'banned' => 1));
 		$domain = explode('@', $email);
-		return $this->db->column('SELECT COUNT(*) FROM "domain" WHERE "domain" = ? AND "banned" = 1', array($domain[1]));
+		return $this->db->column('SELECT * FROM "domain" WHERE "domain" = ? AND "banned" = true', array($domain[1]));
 	}
 	
 
