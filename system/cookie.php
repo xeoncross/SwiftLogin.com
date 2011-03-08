@@ -22,7 +22,7 @@ class cookie
  */
 public static function get($k,$c=NULL)
 {
-	$c=$c?:config('cookie');if(isset($_COOKIE[$k])&&($v=$_COOKIE[$k]))if($v=json_decode(Cipher::decrypt($v,$c['key'])))if($v[0]<$c['expires'])return is_scalar($v[1])?$v[1]:(array)$v[1];
+	//$c=$c?:config('cookie');if(isset($_COOKIE[$k])&&($v=$_COOKIE[$k]))if($v=json_decode(Cipher::decrypt($v,$c['key'])))if($v[0]<$c['expires'])return is_scalar($v[1])?$v[1]:(array)$v[1];
 
 	$c=$c?:config('cookie');
 	if(isset($_COOKIE[$k])&&($v=$_COOKIE[$k]))
@@ -37,7 +37,7 @@ public static function get($k,$c=NULL)
 		print dump($data);
 		die();
 		return is_scalar($v[1])?$v[1]:(array)$v[1];
-
+	}
 }
 
 
