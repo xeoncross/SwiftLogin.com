@@ -93,9 +93,11 @@ class Login_Controller_Index extends SwiftLogin_Controller
 			{
 				$error = $captcha_error;
 			}*/
-			elseif ( ! post('token') OR session('token') !== post('token'))
+			//elseif ( ! post('token') OR session('token') !== post('token'))
+			elseif ( ! Session::token(post('token')))
 			{
 				$error = $default_error;
+				$error = 'Invalid token: '. post('token'). ' = '. session('token');
 			}
 			elseif ( ! post('password') OR mb_strlen(post('password')) < 8 OR mb_strlen(post('password')) > 100)
 			{
