@@ -354,7 +354,7 @@ function base64_url_decode($string = NULL)
  */
 function h($data)
 {
-	return htmlspecialchars($data,ENT_QUOTES,'utf-8');
+	return htmlspecialchars($data,ENT_QUOTES,'UTF-8');
 }
 
 

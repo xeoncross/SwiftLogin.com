@@ -34,7 +34,10 @@ public static function get($k,$c=NULL)
 		$data[] = $v;
 		$data[] = $v[0]<$c['expires'];
 		
-		print dump($data);
+		print '<pre>';
+		var_dump($data);
+		print '</pre>';
+		//print dump($data);
 		die();
 		return is_scalar($v[1])?$v[1]:(array)$v[1];
 	}
