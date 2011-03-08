@@ -97,7 +97,7 @@ class Login_Controller_Index extends SwiftLogin_Controller
 			elseif ( ! Session::token(post('token')))
 			{
 				$error = $default_error;
-				$error = 'Invalid token: '. post('token'). ' = '. session('token');
+				//$error = 'Invalid token: '. post('token'). ' = '. session('token');
 			}
 			elseif ( ! post('password') OR mb_strlen(post('password')) < 8 OR mb_strlen(post('password')) > 100)
 			{
@@ -127,13 +127,12 @@ class Login_Controller_Index extends SwiftLogin_Controller
 					$_SESSION['registration_email'] = $email;
 					$_SESSION['registration_password'] = post('password');
 					
-					print dump($_SESSION);
-					die();
+					//print dump($_SESSION);
+					//die();
 
 					// Send them on
-					Session::save();
 					redirect('account/register');
-		
+					Session::save();
 					exit();
 						
 				}
