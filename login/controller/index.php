@@ -125,6 +125,9 @@ class Login_Controller_Index extends SwiftLogin_Controller
 					$_SESSION['registration_email'] = $email;
 					$_SESSION['registration_password'] = post('password');
 					
+					print dump($_SESSION);
+					die();
+
 					// Send them on
 					Session::save();
 					redirect('account/register');
