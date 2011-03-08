@@ -96,8 +96,8 @@ class Login_Controller_Index extends SwiftLogin_Controller
 			//elseif ( ! post('token') OR session('token') !== post('token'))
 			elseif ( ! Session::token(post('token')))
 			{
-				$error = $default_error;
-				//$error = 'Invalid token: '. post('token'). ' = '. session('token');
+				//$error = $default_error;
+				$error = 'Invalid token: '. post('token'). ' = '. session('token');
 			}
 			elseif ( ! post('password') OR mb_strlen(post('password')) < 8 OR mb_strlen(post('password')) > 100)
 			{
