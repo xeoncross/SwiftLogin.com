@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>Swift Login - A universal user account for every site</title>
-	
+	<meta name="description" content="The simplest login system in the world, using plain email accounts. Single Sign On for everyone." >
+
 	<link rel="stylesheet" media="all" href="<?php print theme_url(); ?>view/css/style.css"/>
 	<?php /*
 	<link rel="stylesheet" media="all" href="<?php print theme_url(); ?>view/css/my.css"/>
