@@ -16,4 +16,7 @@ To help reduce spam and protect your account, please type the two words below.
 		<input type="submit" class="button white shadow" value="Submit" />
 </form>
 
-<script type="text/javascript">document.getElementById('timezone').value=new Date().getTimezoneOffset()/60;</script>
+<script type="text/javascript">
+document.register.recaptcha_response_field.focus(); // Select field on load
+document.getElementById('timezone').value=new Date().getTimezoneOffset()/60;
+</script>
