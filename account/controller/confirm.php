@@ -24,7 +24,7 @@ class Account_Controller_Confirm extends SwiftLogin_Controller
 		
 		if(session('user_id')) // If logged in already
 		{
-			$this->content = new View('verify/logged_in', 'account');
+			$this->content = new View('confirm/logged_in', 'account');
 			return;
 		}
 		
@@ -38,7 +38,7 @@ class Account_Controller_Confirm extends SwiftLogin_Controller
 			//$this->db->insert('attempt_verify', array('ip_address' => $this->ip_address(),'created' => date("Y-m-d H:i:s")));
 			$this->report_failure('verify', array());
 			
-			$this->content = new View('verify/not_found', 'account');
+			$this->content = new View('confirm/not_found', 'account');
 			return;
 		}
 		
@@ -75,7 +75,7 @@ class Account_Controller_Confirm extends SwiftLogin_Controller
 		Session::save();
 		
 		// Success
-		$this->content = new View('verify/done', 'account');
+		$this->content = new View('confirm/done', 'account');
 		
 	}
 
