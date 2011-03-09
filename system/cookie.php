@@ -69,7 +69,7 @@ public static function set($k,$v,$c=NULL)
 
 	extract($c?:config('cookie'));
 	empty($key)&&trigger_error(lang('cookie_no_key'));
-	setcookie($k,($v?base64_encode(Cipher::encrypt(json_encode(array(time(),$v)),$key):'')),$expires,$path,$domain,$secure,$httponly);
+	setcookie($k,($v?base64_encode(Cipher::encrypt(json_encode(array(time(),$v)),$key)):''),$expires,$path,$domain,$secure,$httponly);
 
 }
 
