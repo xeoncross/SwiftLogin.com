@@ -6,7 +6,7 @@ To help reduce spam and protect your account, please type the two words below.
 
 <?php print message();?>
 
-<form method="post" id="register">
+<form method="post" id="register" name="register">
 
 		<?php print $recaptcha; ?>
 		<br />
