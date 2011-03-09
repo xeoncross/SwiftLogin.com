@@ -26,7 +26,7 @@ class Session
  */
 public static function start($name = 'session')
 {
-	if(!empty($_SESSION))return FALSE;$_SESSION=cookie::get($name);$_POST['data'][]=$_SESSION;return TRUE;
+	if(!empty($_SESSION))return FALSE;$_SESSION=cookie::get($name);return TRUE;
 }
 
 
