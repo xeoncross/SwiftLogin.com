@@ -4,10 +4,11 @@
 	<meta charset="utf-8"/>
 	<title>Swift Login - A universal user account for every site</title>
 	
+	<link rel="stylesheet" media="all" href="<?php print theme_url(); ?>view/css/style.css"/>
+	<?php /*
 	<link rel="stylesheet" media="all" href="<?php print theme_url(); ?>view/css/my.css"/>
 	<link rel="stylesheet" media="all" href="<?php print theme_url(); ?>view/css/form.css"/>
 	
-	<?php /*
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -33,7 +34,17 @@
 	//Print any other header data
 	if( ! empty($head_data)) print $head_data;
 	?>
-	
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-244873-16']);
+	  _gaq.push(['_trackPageview']);
+	  
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
 </head>
 <body>
 <div id="container">
@@ -77,7 +88,7 @@
 		*/
 		?>
 		
-		<div class="info" style="float:right;">Copyright 2010 &copy; <a href="/">swiftlogin.com</a> -
+		<div class="info" style="float:right;">Copyright 2011 &copy; <a href="/">swiftlogin.com</a> -
 		<?php if(session('user_id')) { ?>
 		<a href="/account/logout">logout</a> -  
 		<a href="/account">account</a> -

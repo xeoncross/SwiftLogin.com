@@ -267,7 +267,7 @@ function str($str, $default = '')
  */
 function site_url($uri = NULL)
 {
-	return DOMAIN.'/'.$uri;
+	return (strpos($uri,'://')===FALSE||strpos($uri,'://')>9?DOMAIN.'/':'').$uri;
 }
 
 
