@@ -9,8 +9,6 @@ class Verify_Controller_Index extends SwiftLogin_Controller
 	 */
 	public function action()
 	{
-		//die(__LINE__);
-		
 		// Don't even bother
 		if(get('key') AND is_string(get('key')) AND mb_strlen(get('key')) === 32)
 		{
@@ -20,16 +18,26 @@ class Verify_Controller_Index extends SwiftLogin_Controller
 			
 			if($user)
 			{
-				$response = array(
-					'email' => $user->email,
-					'rating' => 0,
-					'timestamp' => time(),
-				);
+				//$domain = $this->db->row('SELECT * FROM "domain" WHERE id = ?', array($user->domain_id));
 				
-				//$this->db->query('UPDATE user SET login_key = \'\' WHERE user_id = ?', array($user->id));
-				//$this->db->update('user', array('login_key' => ''), array('user_id' => $user->id));
-				
-				die(json_encode($response));
+				//if($domain)
+				//{
+					
+					//$this->db->update('user', array('login_key' => ''));
+					
+					$response = array(
+						'email' => $user->email,
+						'rating' => 0,
+						'timestamp' => time(),
+						//'domain_first_seen' => $domain->created()
+					);
+					
+					// Don't allow the same key twice
+					//$this->db->query('UPDATE user SET login_key = \'\' WHERE user_id = ?', array($user->id));
+					//$this->db->update('user', array('login_key' => ''), array('user_id' => $user->id));
+					
+					die(json_encode($response));
+				//}
 			}
 		}
 		
