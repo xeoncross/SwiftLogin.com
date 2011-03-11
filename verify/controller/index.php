@@ -2,21 +2,21 @@
 /**
  * Verify a callback request
  */
-class SwiftLogin_Controller_Verify extends SwiftLogin_Controller
+class Verify_Controller_Index extends SwiftLogin_Controller
 {
 	/*
 	 * Respond
 	 */
-	function action()
+	public function action()
 	{
-		
+		//die(__LINE__);
 		
 		// Don't even bother
 		if(get('key') AND is_string(get('key')) AND mb_strlen(get('key')) === 32)
 		{
 			$this->load_database();
 			
-			$user = $this->db->row('SELECT * FROM user WHERE login_key = ?', array(get('key')));
+			$user = $this->db->row('SELECT * FROM "user" WHERE login_key = ?', array(get('key')));
 			
 			if($user)
 			{
