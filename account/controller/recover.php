@@ -51,7 +51,7 @@ class Account_Controller_Recover extends SwiftLogin_Controller
 				//$t=new time();
 				//print dump($t->getSQL(), $time->getSQL());
 			
-				$user = $this->db->row('SELECT * FROM user WHERE email = ?', array($email));
+				$user = $this->db->row('SELECT * FROM "user" WHERE email = ?', array($email));
 		
 				// If no user was found then create one!
 				if( ! $user)
@@ -101,7 +101,7 @@ class Account_Controller_Recover extends SwiftLogin_Controller
 		}
 		elseif(get('key'))
 		{
-			$user = $this->db->row('SELECT * FROM user WHERE new_password_key = ?', array(get('key')));
+			$user = $this->db->row('SELECT * FROM "user" WHERE new_password_key = ?', array(get('key')));
 			
 			if( ! $user)
 			{
@@ -111,7 +111,7 @@ class Account_Controller_Recover extends SwiftLogin_Controller
 			else
 			{
 				// Fix user row.
-				$this->db->query('UPDATE user SET new_password_key = NULL, new_password_time = NULL WHERE id = ?', array($user->id));
+				$this->db->query('UPDATE "user" SET new_password_key = NULL, new_password_time = NULL WHERE id = ?', array($user->id));
 				
 				//$user->new_password_key = NULL;
 				//$user->new_password_time = NULL;
