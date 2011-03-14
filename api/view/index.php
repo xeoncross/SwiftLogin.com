@@ -27,7 +27,7 @@
 print h('GET https://swiftlogin.com/verify?key=PLACEKEYHERE HTTP/1.1');
 ?></code>
 
-<p>We will return a JSON encoded response containing the user's email, their timezone offset, a timestamp, and a rating.</p>
+<p>We will return a JSON encoded response containing the user's email, their timezone offset, a request timestamp, and a rating.</p>
 
 <pre>
 {
@@ -38,6 +38,8 @@ print h('GET https://swiftlogin.com/verify?key=PLACEKEYHERE HTTP/1.1');
 }
 </pre>
 
+<p>The user rating represents their combined reputation across all sites. A positive rating means they are recommended by other sites. A negative rating means they have been flagged by other sites. Each point represents a vote by a site. You may wish to give special privileges to users which come with a high rating.</p>
+
 If the token provided is not valid, the response will instead return an error. A token may not be reused.
 
 <pre>
@@ -45,7 +47,6 @@ If the token provided is not valid, the response will instead return an error. A
 	"error":"Invalid Request"
 }
 </pre>
-
 
 <?php
 /*
