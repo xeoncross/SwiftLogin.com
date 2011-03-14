@@ -1,6 +1,6 @@
 <?php
 /*
- * ?callback_id=13&callback_url=http://full.domain.tld/user/login?from=emaillogin
+ * ?callback_id=13&callback_url=http://full.domain.tld/user/login?from=site
  */
 class Account_Controller_Register extends SwiftLogin_Controller
 {

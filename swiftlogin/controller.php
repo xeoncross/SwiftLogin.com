@@ -168,6 +168,8 @@ class SwiftLogin_Controller extends Controller
 	
 	/**
 	 * Returns the email string  if it is valid - false if it is not
+	 *
+	 * @see http://en.wikipedia.org/wiki/Email_address
 	 * @param string $email
 	 * @return string
 	 */
@@ -175,7 +177,7 @@ class SwiftLogin_Controller extends Controller
 	{
 		if(is_string($email) AND ($email = trim($email)) AND mb_strlen($email) < 61)
 		{
-			if(preg_match('/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i', $email))
+			if(preg_match('/^[A-Za-z0-9._%+\-#|]+@[a-z0-9.-]+\.[a-z]{2,4}$/', $email))
 			{
 				return $email;
 			}

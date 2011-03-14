@@ -41,13 +41,13 @@ print h("Net::HTTP.get(URI.parse('https://swiftlogin.com/verify?key=?'))");
 <h2>Important Usage Restriction</h2>
 <p>Displaying a full email address on your site is discouraged as it violates a users privacy and opens 
 the door for spam bots to "harvest" the email. Therefore, you are not allowed to publicly display an email
-you recived from SwiftLogin on your site. You may display the email to other site memebers as long as it 
+you received from SwiftLogin on your site. You may display the email to other site members as long as it 
 obfuscated, displayed in an image, or HTML encoded. If you need to show something then show the "username" 
 (the part before the "@"). These rules are in place to provide a level of harvesting protection.</p>
 
-<p><b>Any site displaying user emails in a way we deam inappropriate may be blocked.</b></p>
+<p><b>Any site displaying user emails in a way we deem inappropriate may be blocked.</b></p>
 
-<p>Remember, as site owners it's our responsibility to protect our members privacy.</p> 
+<p>Remember, as site owners it is our responsibility to protect our members privacy.</p> 
 
 <p>THIS WEB SITE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
