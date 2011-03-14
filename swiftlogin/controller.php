@@ -131,7 +131,7 @@ class SwiftLogin_Controller extends Controller
 	*/
 	
 	// Sends an HTML formatted email
-	protected function email($to, $subject, $msg, $from = 'SwiftLogin Activation <donotreply@swiftlogin.com>', $plaintext = '')
+	protected function email($to, $subject, $msg, $from = 'SwiftLogin <donotreply@swiftlogin.com>', $plaintext = '')
 	{
 		if(!is_array($to)) $to = array($to);
 		if(!$plaintext) $plaintext = strip_tags($msg);

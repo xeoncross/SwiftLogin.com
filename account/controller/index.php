@@ -22,7 +22,7 @@ class Account_Controller_Index extends SwiftLogin_Controller
 			{
 				if($this->password_strength($password) >= 3)
 				{
-					$user_salt = $this->db->column('SELECT user_salt FROM user WHERE id = ?', array(session('user_id')));
+					$user_salt = $this->db->column('SELECT user_salt FROM "user" WHERE id = ?', array(session('user_id')));
 					$password = $this->hash_password($user_salt.$password);
 				
 					$this->db->update('user', array('password' => $password), array('id' => session('user_id')));
