@@ -27,6 +27,7 @@ class Verify_Controller_Index extends SwiftLogin_Controller
 					
 					$response = array(
 						'email' => $user->email,
+						'timezone' => $user->timezone,
 						'rating' => 0,
 						'timestamp' => time(),
 						//'domain_first_seen' => $domain->created()

@@ -177,7 +177,9 @@ class SwiftLogin_Controller extends Controller
 	{
 		if(is_string($email) AND ($email = trim($email)) AND mb_strlen($email) < 61)
 		{
-			if(preg_match('/^[A-Za-z0-9._%+\-#|]+@[a-z0-9.-]+\.[a-z]{2,4}$/', $email))
+			$email = mb_strtolower($email);
+			
+			if(preg_match('/^[a-z0-9._+\-#|]+@[a-z0-9.-]+\.[a-z]{2,4}$/', $email))
 			{
 				return $email;
 			}

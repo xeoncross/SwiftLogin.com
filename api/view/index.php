@@ -7,6 +7,8 @@
 	<li>Send a HTTP request to our server when the user returns.</li>
 </ol>
 
+<p>See an example site at <a href="http://example.swiftlogin.com">http://example.swiftlogin.com</a> and download the <a href="https://github.com/SwiftLogin/Example-SwiftLogin-Site">source code from github</a>.
+
 <h2>Step 1: Link to SwiftLogin</h2>
 
 <p>Place a link to <em>https://swiftlogin.com/login</em> on any of your pages (or send them with a HTTP redirect) along with a URL parameter telling us where to send the user after they login. For example, if your login page is located at <em>http://example.com/login</em>, then you would append that value to the URI using the <em>url</em> GET parameter.</p>
@@ -22,10 +24,28 @@
 <p>After the user returns from successfully logging in, they will have a secret key you can use to fetch their account information. Simply pass that key back to our server using a simple HTTP request.</p>
 
 <code><?php
-print h('GET https://swiftlogin.com/verify?key=? HTTP/1.1');
+print h('GET https://swiftlogin.com/verify?key=PLACEKEYHERE HTTP/1.1');
 ?></code>
 
-<p>We will return a JSON encoded response containing the user's email, their timezone, a timestamp, and a SwiftLogin rating</p>
+<p>We will return a JSON encoded response containing the user's email, their timezone offset, a timestamp, and a rating.</p>
+
+<pre>
+{
+	"email":"user@example.com",
+	"timestamp":"1234567890",
+	"rating":"2",
+	"timezone":"-3"
+}
+</pre>
+
+If the token provided is not valid, the response will instead return an error. A token may not be reused.
+
+<pre>
+{
+	"error":"Invalid Request"
+}
+</pre>
+
 
 <?php
 /*
@@ -38,11 +58,11 @@ print h("Net::HTTP.get(URI.parse('https://swiftlogin.com/verify?key=?'))");
 ?>
 
 
-<h2>Important Usage Restriction</h2>
+<h2>Important Usage Terms</h2>
 <p>Displaying a full email address on your site is discouraged as it violates a users privacy and opens 
 the door for spam bots to "harvest" the email. Therefore, you are not allowed to publicly display an email
 you received from SwiftLogin on your site. You may display the email to other site members as long as it 
-obfuscated, displayed in an image, or HTML encoded. If you need to show something then show the "username" 
+obfuscated, displayed in an image, or HTML encoded. If you need to show something then show the local "username" 
 (the part before the "@"). These rules are in place to provide a level of harvesting protection.</p>
 
 <p><b>Any site displaying user emails in a way we deem inappropriate may be blocked.</b></p>
