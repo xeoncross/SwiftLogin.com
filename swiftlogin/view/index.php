@@ -8,6 +8,8 @@ solution for both site owners and end users.</p>
 
 <p>The end of complex, frustrating registration forms.</p><!--  and bogus spam accounts.</p> -->
 
+<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/dGQYHOzLMUk" frameborder="0" allowfullscreen></iframe>
+
 <!-- 
 for anyone with an email address.</p> -->
 <!-- 
