@@ -5,7 +5,8 @@
 	$links = array(
 		'' => 'Home',
 		'api' => 'Developer API',
-		'forum' => 'Support',
+		//'forum' => 'Support',
+		'about/privacy' => 'Privacy Policy'
 	);
 	
 	if(session('user_id'))
