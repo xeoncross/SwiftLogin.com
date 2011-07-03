@@ -10,20 +10,20 @@ class Allow_Controller_Index extends Swiftlogin_Controller
 	{
 		// Start the user session
 		Session::start();
-		
+
 		$this->require_login();
-		
+
 		if( ! session('callback_url') OR ! session('callback_domain')) // should never be here then!
 		{
 			redirect();
 			//print dump('Nothing to confirm', $_SESSION);
 			exit();
 		}
-		
+
 		$this->load_database();
-		
+
 		$domain = $this->get_domain(session('callback_domain'));
-		
+
 		// New callback site they haven't confirmed yet
 		if($this->is_new_callback($domain))
 		{
@@ -47,27 +47,27 @@ class Allow_Controller_Index extends Swiftlogin_Controller
 				$this->link_user_to_site($domain);
 			}
 		}
-		
+
 		if(empty($url))// Already confirmed this site - or answered "yes"!
 		{
 			// Create a login key
 			$login_key = token();
-			$this->db->update('user', array('login_key' => $login_key), array('id' => session('user_id')));
-			
+			$this->db->update('user', array('login_key' => $login_key, 'login_domain' => $domain->id), array('id' => session('user_id')));
+
 			$url = $this->build_callback_url($login_key);
 		}
-		
+
 		// Send them on their way!
 		redirect($url);
-				
+
 		// Now that we are done we can remove session data
 		unset($_SESSION['callback_url'], $_SESSION['callback_domain']);
-			
+
 		// Save user session
 		Session::save();
-			
+
 		exit();
-		
+
 	}
 
 	/**
@@ -79,5 +79,5 @@ class Allow_Controller_Index extends Swiftlogin_Controller
 		$sql = 'SELECT COUNT(*) FROM "linked" WHERE "user_id" = ? AND "domain_id" = ?';
 		return ! $this->db->column($sql, array(session('user_id'), $domain->id));
 	}
-	
+
 }
