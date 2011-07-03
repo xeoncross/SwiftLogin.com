@@ -40,7 +40,7 @@ class Verify_Controller_Index extends SwiftLogin_Controller
 
 						// Don't allow the same key twice
 						//$this->db->query('UPDATE user SET login_key = \'\' WHERE user_id = ?', array($user->id));
-						$this->db->update('user', array('login_key' => '', 'login_domain' => ''), array('id' => $user->id));
+						$this->db->update('user', array('login_key' => '', 'login_domain' => 0), array('id' => $user->id));
 
 						die(json_encode($response));
 					}
